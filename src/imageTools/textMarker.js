@@ -7,6 +7,7 @@ import toolColors from '../stateManagement/toolColors.js';
 import isMouseButtonEnabled from '../util/isMouseButtonEnabled.js';
 import drawTextBox from '../util/drawTextBox.js';
 import { removeToolState, getToolState } from '../stateManagement/toolState.js';
+import uuid from 'uuid';
 
 const toolType = 'textMarker';
 
@@ -20,6 +21,7 @@ function createNewMeasurement (mouseEventData) {
 
     // Create the measurement data for this tool with the end handle activated
   const measurementData = {
+    uuid: uuid.v4(),
     visible: true,
     active: true,
     text: config.current,

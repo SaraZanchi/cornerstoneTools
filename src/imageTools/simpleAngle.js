@@ -12,7 +12,7 @@ import moveNewHandleTouch from '../manipulators/moveNewHandleTouch';
 import drawHandles from '../manipulators/drawHandles';
 import touchTool from './touchTool';
 import { addToolState, removeToolState, getToolState } from '../stateManagement/toolState.js';
-
+import uuid from 'uuid';
 
 const toolType = 'simpleAngle';
 
@@ -20,6 +20,7 @@ const toolType = 'simpleAngle';
 function createNewMeasurement (mouseEventData) {
     // Create the measurement data for this tool with the end handle activated
   const angleData = {
+    uuid: uuid.v4(),
     visible: true,
     active: true,
     handles: {

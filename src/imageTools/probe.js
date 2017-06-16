@@ -9,6 +9,7 @@ import drawTextBox from '../util/drawTextBox';
 import getRGBPixels from '../util/getRGBPixels';
 import calculateSUV from '../util/calculateSUV';
 import { getToolState } from '../stateManagement/toolState.js';
+import uuid from 'uuid';
 
 const toolType = 'probe';
 
@@ -16,6 +17,7 @@ const toolType = 'probe';
 function createNewMeasurement (mouseEventData) {
     // Create the measurement data for this tool with the end handle activated
   const measurementData = {
+    uuid: uuid.v4(),
     visible: true,
     active: true,
     handles: {

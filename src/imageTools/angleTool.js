@@ -9,6 +9,7 @@ import textStyle from '../stateManagement/textStyle.js';
 import toolColors from '../stateManagement/toolColors.js';
 import drawHandles from '../manipulators/drawHandles';
 import { getToolState } from '../stateManagement/toolState.js';
+import uuid from 'uuid';
 
 const toolType = 'angle';
 
@@ -16,6 +17,7 @@ const toolType = 'angle';
 function createNewMeasurement (mouseEventData) {
     // Create the measurement data for this tool with the end handle activated
   const angleData = {
+    uuid: uuid.v4(),
     visible: true,
     active: true,
     handles: {

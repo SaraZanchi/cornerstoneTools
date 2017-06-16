@@ -7,6 +7,7 @@ import toolStyle from '../stateManagement/toolStyle.js';
 import toolColors from '../stateManagement/toolColors.js';
 import drawHandles from '../manipulators/drawHandles';
 import { getToolState } from '../stateManagement/toolState.js';
+import uuid from 'uuid';
 
 const toolType = 'length';
 
@@ -14,6 +15,7 @@ const toolType = 'length';
 function createNewMeasurement (mouseEventData) {
     // Create the measurement data for this tool with the end handle activated
   const measurementData = {
+    uuid: uuid.v4(),
     visible: true,
     active: true,
     handles: {

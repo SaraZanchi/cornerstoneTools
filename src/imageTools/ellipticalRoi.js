@@ -11,6 +11,7 @@ import pointInEllipse from '../util/pointInEllipse';
 import calculateEllipseStatistics from '../util/calculateEllipseStatistics';
 import calculateSUV from '../util/calculateSUV';
 import { getToolState } from '../stateManagement/toolState.js';
+import uuid from 'uuid';
 
 const toolType = 'ellipticalRoi';
 
@@ -18,6 +19,7 @@ const toolType = 'ellipticalRoi';
 function createNewMeasurement (mouseEventData) {
     // Create the measurement data for this tool with the end handle activated
   const measurementData = {
+    uuid: uuid.v4(),
     visible: true,
     active: true,
     invalidated: true,

@@ -5,6 +5,7 @@ import toolColors from '../stateManagement/toolColors.js';
 import drawHandles from '../manipulators/drawHandles';
 import isMouseButtonEnabled from '../util/isMouseButtonEnabled';
 import { addToolState, getToolState } from '../stateManagement/toolState.js';
+import uuid from 'uuid';
 
 const toolType = 'freehand';
 let configuration = {
@@ -12,7 +13,8 @@ let configuration = {
     handles: {
       start: {
         highlight: true,
-        active: true
+        active: true,
+        allowedOutsideImage: true
       }
     }
   },
@@ -37,6 +39,7 @@ function addPoint (eventData) {
   const data = toolData.data[config.currentTool];
 
   const handleData = {
+    uuid: uuid.v4(),
     x: eventData.currentPoints.image.x,
     y: eventData.currentPoints.image.y,
     highlight: true,

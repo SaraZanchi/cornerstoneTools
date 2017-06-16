@@ -14,6 +14,7 @@ import drawCircle from '../util/drawCircle';
 import isMouseButtonEnabled from '../util/isMouseButtonEnabled';
 import pointInsideBoundingBox from '../util/pointInsideBoundingBox';
 import { addToolState, removeToolState, getToolState } from '../stateManagement/toolState.js';
+import uuid from 'uuid';
 
 const toolType = 'seedAnnotate';
 
@@ -77,6 +78,7 @@ function addNewMeasurement (mouseEventData) {
 function createNewMeasurement (mouseEventData) {
     // Create the measurement data for this tool with the end handle activated
   const measurementData = {
+    uuid: uuid.v4(),
     visible: true,
     active: true,
     handles: {
