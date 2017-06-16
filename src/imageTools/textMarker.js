@@ -29,7 +29,8 @@ function createNewMeasurement (mouseEventData) {
         y: mouseEventData.currentPoints.image.y,
         highlight: true,
         active: true,
-        hasBoundingBox: true
+        hasBoundingBox: true,
+        allowedOutsideImage: true
       }
     }
   };
